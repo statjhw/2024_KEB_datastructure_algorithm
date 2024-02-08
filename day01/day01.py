@@ -1,18 +1,19 @@
 import mymath
 import time
+import random
 
-if __name__ == "__main__" : #여러 개의 파일을 실행 시 메인 파일을 확인하는 코드
-    n = int(input("Input n : "))
-    r = int(input("Input r : "))
-    print(f"{n}C{r} = {mymath.nCr(n, r)}")
-
-
-    # start = time.time()
-    # mymath.factorial(100)
-    # end = time.time()
-    # print(f"반복문 : {end - start}")
-    # start = time.time()
-    # mymath.factorial_resursion(100)
-    # end = time.time()
-    # print(f"재귀 : {end - start}")
-
+count = 7
+rand = random.randint(0,100)
+while  count != 0:
+    count -= 1
+    n = int(input("숫자를 입력하세요 : "))
+    if n == rand:
+        print("정답입니다.")
+        print(f"{7-count}번 실행했습니다.")
+        break
+    elif n > rand :
+        print(f"{n}보다 작은 수 입니다.")
+    else :
+        print(f"{n}보다 큰 수입니다.")
+else :
+    print("주어진 기회를 모두 사용했습니다.ㅜㅜ")
