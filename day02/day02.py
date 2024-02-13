@@ -1,40 +1,26 @@
-def isQueueFull() :
-	global SIZE, queue, front, rear
-	if (rear+1)%SIZE == front) :
-		return True
-	else :
-		return False
+class TreeNode() :
+	def __init__(self) :
+		self.left = None
+		self.data = None 
+		self.right = None
 
-def isqueueEmpty() ;
-	global SIZE, queue, front, rear
-	if (front == rear) :
-		return True
-	else :
-		return False
-
-def enQueue(data) :
-	global SIZE, queue, front, rear
-	if isQueueFull() :
-		print("큐가 꽉 찼습니다")
+def preorder(node) :
+	if node == None :
 		return 
-	rear = (rear+1) % SIZE
-	queue[rear] = data
+	print(node.data, end = '->')
+	preorder(node.left)
+	preorder(node.right)
 
-def deQueue() :
-	global SIZE, queue, front, rear
-	if isQueueEmpty() :
-		print("큐가 비었습니다.")
-		return None
-	front = (front+1)%SIZE
-	data = queue[front]
-	queue[front] = None
-	return data
-
-def peek() :
-	global SIZE, queue, front, rear
-	if isQueueEmpty() :
-		print("큐가 비었습니다")
-		return None
-	return queue[(front+1)%SIZE]
-
-front = rear = 0
+def inorder(node) :
+	if node == None :
+		return 
+	inorder(node.left)
+	inorder(node.data, end = '->')
+	inorder(node.right)
+	
+def postorder(node) :
+	if node == Node :
+		return 
+	postorder(node.left)
+	postorder(node.right)
+	print(node.datam end = '->')
