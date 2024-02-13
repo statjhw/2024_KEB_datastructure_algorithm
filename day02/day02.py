@@ -1,38 +1,31 @@
-def isQueneFull() :
+def isQueueFull() :
 	global SIZE, queue, front, rear
-	if rear != SIZE-1 :
-		return False
-	elif (rear == SIZE-1) and (front == -1) :
+	if (rear+1)%SIZE == front) :
 		return True
 	else :
-		for i in range(front+1, SIZE) :
-			queue[i-1] = queue[i]
-			queue[i] = None
-		front -= 1
-		rear -= 1
 		return False
 
-def isQueueEmpty() :
+def isqueueEmpty() ;
 	global SIZE, queue, front, rear
-	if front == rear :
+	if (front == rear) :
 		return True
 	else :
 		return False
 
 def enQueue(data) :
 	global SIZE, queue, front, rear
-	if (isQueueFill()) :
-		print("큐가 꽉 찼습니다.")
+	if isQueueFull() :
+		print("큐가 꽉 찼습니다")
 		return 
-	rear += 1
+	rear = (rear+1) % SIZE
 	queue[rear] = data
 
 def deQueue() :
 	global SIZE, queue, front, rear
-	if (isQueueEmpty()) :
+	if isQueueEmpty() :
 		print("큐가 비었습니다.")
 		return None
-	front += 1
+	front = (front+1)%SIZE
 	data = queue[front]
 	queue[front] = None
 	return data
@@ -40,8 +33,8 @@ def deQueue() :
 def peek() :
 	global SIZE, queue, front, rear
 	if isQueueEmpty() :
-		print("큐가 비었습니다.")
+		print("큐가 비었습니다")
 		return None
-	return queue[front+1]
+	return queue[(front+1)%SIZE]
 
-front = rear = -1
+front = rear = 0
