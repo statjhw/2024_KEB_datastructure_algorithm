@@ -39,6 +39,52 @@ for name in nameAry[1:] :
 	
 
 
+findName = '마마무'
+current = root 
+while True :
+	if findName == current.data :
+		print(findName, "을 찾음")
+		break
+	elif findName < current.data :
+		if current.left == None :
+			print(findName, '이 트리에 없음')
+			break
+		current = current.left
+	else :
+		if current.right == None :
+			print(findName, '이 트리에 없음')
+			break
+		current = current.right
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
