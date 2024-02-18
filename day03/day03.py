@@ -55,37 +55,55 @@ while True :
 			print(findName, '이 트리에 없음')
 			break
 		current = current.right
+
+#이진 탐색 트리에서 데이터 삭제 완성
+
+deleteName = '마마무'
+current = root
+parent = None
+while True :
+	if deleteName == current.data :
+		if current.left == None and current.right == None :
+			if parent.left == current :
+				parent.left = None
+			else : 
+				parent.right = None
+			del(current)
+		elif current.left != None and current.right == None :
+			if parent.left == current :
+				parent.left = current.left 
+			else :
+				parent.right = current.left
+			del(current)
+
+		elif current.left  == None and current.right != None :
+			if parent.left == current :
+				parent.left = current.right
+			else :
+				parent.right = current.right
+			del(current)
+		
+
+		print(deleteName, "이 삭제됨.")
+		break
+	elif deleteName < current.data :
+		if current.left == None :
+			print(deleteName, '이 트리에 없음')
+			break
+		parent = current
+		current = current.left
+	else :
+		if current.right == None :
+			print(deleteName, '이 트리에 없음')
+			break
+		parent = current
+		current = current.right
+
+
+
+
+
+
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
