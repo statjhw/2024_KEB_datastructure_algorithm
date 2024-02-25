@@ -1,13 +1,4 @@
-#깊이 우선 탐색 재귀를 이용한 
-# def dfs(g, v, visited) :
-#     visited[v] = True
-#     print(name[v], end = ' ')
-#     for i in range(len(g)) :
-#         if g[v][i] == True and not visited[i] :
-#             dfs(g, i, visited)
-
-#이진 탐색 트리에서 데이터를 삽입하는 방법
-# class TreeNode :
+class TreeNode :
 # 	def __init__(self) :
 # 		self.left = None
 # 		self.data = None
@@ -98,44 +89,6 @@
 # 			break
 # 		parent = current
 # 		current = current.right
-
-
-
-
-
-
- 
-
-
-#그래프
-class Graph() :
-	def __init__(self, size) -> None:
-		self.SIZE = size
-		self.graph = [[0 for _ in range(self.SIZE)] for _ in range(self.SIZE)]
-
-G1, G3 = None, None
-
-G1 = Graph(4)
-G1.graph[0][1] = 1; G1.graph[0][2] = 1; G1.graph[0][3] = 1
-G1.graph[1][0] = 1; G1.graph[1][2] = 1
-G1.graph[2][0] = 1; G1.graph[2][1] = 1; G1.graph[2][3] = 1
-G1.graph[3][0] = 1; G1.graph[3][2] = 1
-
-print("##G1 무방향 그래프")
-for row in range(G1.SIZE) :
-	for col in range(G1.SIZE) :
-		print(G1.graph[row][col], end = " ")
-	print()
-
-G3 = Graph(4)
-G3.graph[0][1] = 1; G3.graph[0][2] = 1
-G3.graph[3][0] = 1; G3.graph[3][2] = 1
-
-print("##G3 방향 그래프")
-for row in range(G3.SIZE) :
-	for col in range(G3.SIZE) :
-		print(G3.graph[row][col], end = " ")
-	print()
 
 
 
